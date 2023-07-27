@@ -1,6 +1,8 @@
 /* stylelint-disable at-rule-empty-line-before,at-rule-name-space-after,at-rule-no-unknown */
 @import '../color/colors';
 
+@import './custom-overrides';
+
 @theme: default;
 
 // The prefix to use on all css classes from ant.
@@ -14,20 +16,20 @@
 
 // -------- Colors -----------
 // >>> Primary
-@primary-color: @blue-6;
+@primary-color: @custom-colorPrimary;
 @primary-color-hover: color(~`colorPalette('@{primary-color}', 5) `);
 @primary-color-active: color(~`colorPalette('@{primary-color}', 7) `);
 @primary-color-outline: fade(@primary-color, @outline-fade);
 
-@processing-color: @blue-6;
+@processing-color: @custom-colorInfo;
 
 // >>> Info
-@info-color: @primary-color;
+@info-color: @custom-colorInfo;
 @info-color-deprecated-bg: color(~`colorPalette('@{info-color}', 1) `);
 @info-color-deprecated-border: color(~`colorPalette('@{info-color}', 3) `);
 
 // >>> Success
-@success-color: @green-6;
+@success-color: @custom-colorSuccess;
 @success-color-hover: color(~`colorPalette('@{success-color}', 5) `);
 @success-color-active: color(~`colorPalette('@{success-color}', 7) `);
 @success-color-outline: fade(@success-color, @outline-fade);
@@ -43,7 +45,7 @@
 @warning-color-deprecated-border: color(~`colorPalette('@{warning-color}', 3) `);
 
 // >>> Error
-@error-color: @red-5;
+@error-color: @custom-colorError;
 @error-color-hover: color(~`colorPalette('@{error-color}', 5) `);
 @error-color-active: color(~`colorPalette('@{error-color}', 7) `);
 @error-color-outline: fade(@error-color, @outline-fade);
@@ -644,8 +646,8 @@
 @table-body-selected-sort-bg: @table-selected-row-bg;
 @table-selected-row-hover-bg: darken(@table-selected-row-bg, 2%);
 @table-expanded-row-bg: #fbfbfb;
-@table-padding-vertical: 16px;
-@table-padding-horizontal: 16px;
+@table-padding-vertical: @custom-tablePaddingVertical;
+@table-padding-horizontal: @custom-tablePaddingHorizontal;
 @table-padding-vertical-md: (@table-padding-vertical * 3 / 4);
 @table-padding-horizontal-md: (@table-padding-horizontal / 2);
 @table-padding-vertical-sm: (@table-padding-vertical / 2);
